@@ -20,7 +20,7 @@ resource "aws_instance" "test-server" {
   }
    
   provisioner "local-exec" {
-    command = "echo ${aws_instance.test-server.public_ip} > inventory"
+    command = "echo ${aws_instance.test_server.public_ip} > inventory"
   }
 
   provisioner "local-exec" {
