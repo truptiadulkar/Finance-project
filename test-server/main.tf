@@ -8,11 +8,8 @@ resource "aws_instance" "test-server" {
     Name = "test-server"
   }
   
-   provisioner "local-exec" {
-    command = [
-      "sleep 60",
-      "echo 'Instance ready'"
-    ]
+  provisioner "local-exec" {
+    command = "sleep 60 && echo 'Instance ready'"
   }
   
   connection {
@@ -28,5 +25,5 @@ resource "aws_instance" "test-server" {
 
   provisioner "local-exec" {
     command = "ansible-playbook /var/lib/jenkins/workspace/finance-project/test-server/Deploy.yml"
-  }
+  }
 }
