@@ -8,7 +8,7 @@ resource "aws_instance" "test_server" {
     Name = "test-server"
   }
   
-  provisioner "local-exec" {
+  provisioner "remote-exec" {
     command = "sleep 60 && echo 'Instance ready'"
   }
   
