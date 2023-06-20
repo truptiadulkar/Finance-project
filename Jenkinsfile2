@@ -41,9 +41,9 @@ pipeline {
          sh 'docker push trupti20/finance-me-project:latest'
             }
         }
-      stage('Configure test-server with Terraform, Ansible and then Deploying') {
+      stage('Configure prod-server with Terraform, Ansible and then Deploying') {
         steps {
-            dir('test-server'){
+            dir('prod-server'){
             sh 'chmod 600 keypairpem.pem'
             sh 'terraform init'
             sh 'terraform validate'
