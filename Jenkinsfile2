@@ -43,7 +43,7 @@ pipeline {
         }
       stage('Configure test-server with Terraform, Ansible and then Deploying') {
         steps {
-            dir('prod-server'){
+            dir('test-server'){
             sh 'chmod 600 keypairpem.pem'
             sh 'terraform init'
             sh 'terraform validate'

@@ -1,10 +1,10 @@
-resource "aws_instance" "prod-server" {
+resource "aws_instance" "test-server" {
   ami                    = "ami-0f5ee92e2d63afc18"
   instance_type          = "t2.micro"
   key_name               = "keypairpem"
   vpc_security_group_ids = ["sg-0a5b8d6ca31ae2d81"]
   tags = {
-    Name = "prod-server"
+    Name = "test-server"
   }
   
   provisioner "local-exec" {
